@@ -1,0 +1,805 @@
+[
+    {
+        "id": "9d17decb19bf6029",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "79e5984cacd502c3",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1cbe42155edc4aea",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "77fe88605cffb6ea",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.1.15",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "03e067e1a71918f3",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "79a7227585e402e0",
+        "type": "ui_tab",
+        "name": "Tablero de control",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f8afb99db4151e55",
+        "type": "ui_group",
+        "name": "Temperatura Ambiental",
+        "tab": "79a7227585e402e0",
+        "order": 1,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "eb7a5d2cecec97ef",
+        "type": "ui_group",
+        "name": "Humedad Ambiental",
+        "tab": "79a7227585e402e0",
+        "order": 2,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2ce251332ea178d5",
+        "type": "ui_group",
+        "name": "Humedad Suelo",
+        "tab": "79a7227585e402e0",
+        "order": 3,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d44d221deab2a965",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "proyectoiot-grupo7",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "a3fb997d22059fa3",
+        "type": "mqtt in",
+        "z": "9d17decb19bf6029",
+        "name": "",
+        "topic": "esp8266/humedad",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "77fe88605cffb6ea",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 300,
+        "wires": [
+            [
+                "b46e22e9fba0f0bc",
+                "ec3db36cc185e394",
+                "f1b49e8616960a8c",
+                "2d85480bf206f76e"
+            ]
+        ]
+    },
+    {
+        "id": "6a3083624df7d1a7",
+        "type": "mqtt in",
+        "z": "9d17decb19bf6029",
+        "name": "",
+        "topic": "esp8266/temperatura",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "77fe88605cffb6ea",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 160,
+        "wires": [
+            [
+                "407b3f8cc422f633",
+                "58ae715d6cb9b158",
+                "34dd574a181d41f9",
+                "9865cac226e92f4c"
+            ]
+        ]
+    },
+    {
+        "id": "34dd574a181d41f9",
+        "type": "debug",
+        "z": "9d17decb19bf6029",
+        "name": "debug temperatura ambiental",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "407b3f8cc422f633",
+        "type": "ui_gauge",
+        "z": "9d17decb19bf6029",
+        "name": "",
+        "group": "f8afb99db4151e55",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 530,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "deb9e32c2211612b",
+        "type": "mqtt in",
+        "z": "9d17decb19bf6029",
+        "name": "",
+        "topic": "esp8266/humedadSuelo",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "77fe88605cffb6ea",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 540,
+        "wires": [
+            [
+                "bf57c0fca470d76d",
+                "69877262bcb32569",
+                "edb32820e6b0c46a",
+                "6504aceeb7eba32c"
+            ]
+        ]
+    },
+    {
+        "id": "b46e22e9fba0f0bc",
+        "type": "ui_gauge",
+        "z": "9d17decb19bf6029",
+        "name": "",
+        "group": "eb7a5d2cecec97ef",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humedad Ambiental",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 540,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "bf57c0fca470d76d",
+        "type": "ui_gauge",
+        "z": "9d17decb19bf6029",
+        "name": "",
+        "group": "2ce251332ea178d5",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humedad Suelo",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1024",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 540,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "f1b49e8616960a8c",
+        "type": "debug",
+        "z": "9d17decb19bf6029",
+        "name": "debug humedad ambiental",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "edb32820e6b0c46a",
+        "type": "debug",
+        "z": "9d17decb19bf6029",
+        "name": "debug humedad del suelo",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "58ae715d6cb9b158",
+        "type": "ui_chart",
+        "z": "9d17decb19bf6029",
+        "name": "",
+        "group": "f8afb99db4151e55",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Grafico Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 540,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ec3db36cc185e394",
+        "type": "ui_chart",
+        "z": "9d17decb19bf6029",
+        "name": "",
+        "group": "eb7a5d2cecec97ef",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Grafico Humedad Ambiental",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 560,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "69877262bcb32569",
+        "type": "ui_chart",
+        "z": "9d17decb19bf6029",
+        "name": "",
+        "group": "2ce251332ea178d5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Grafico Humedad Suelo",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1025",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "49151ddada4b69cd",
+        "type": "mysql",
+        "z": "9d17decb19bf6029",
+        "mydb": "d44d221deab2a965",
+        "name": "",
+        "x": 850,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "afc3c6e8608dfd7c",
+        "type": "function",
+        "z": "9d17decb19bf6029",
+        "name": "mandarDatos",
+        "func": "var temperatura = msg.payload[0];\nvar humedad = msg.payload[1];\nvar humedadSuelo = msg.payload[2];\nmsg.topic = \"insert into datossensores values(CURDATE(), CURTIME(),\" + temperatura + \",\" + humedad + \",\" + humedadSuelo+\");\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 300,
+        "wires": [
+            [
+                "49151ddada4b69cd"
+            ]
+        ]
+    },
+    {
+        "id": "9865cac226e92f4c",
+        "type": "function",
+        "z": "9d17decb19bf6029",
+        "name": "getTemperatura",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 100,
+        "wires": [
+            [
+                "f7bdab218ee74250"
+            ]
+        ]
+    },
+    {
+        "id": "2d85480bf206f76e",
+        "type": "function",
+        "z": "9d17decb19bf6029",
+        "name": "getHumedad",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 320,
+        "wires": [
+            [
+                "f7bdab218ee74250"
+            ]
+        ]
+    },
+    {
+        "id": "6504aceeb7eba32c",
+        "type": "function",
+        "z": "9d17decb19bf6029",
+        "name": "getHumedadSuelo",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 560,
+        "wires": [
+            [
+                "f7bdab218ee74250"
+            ]
+        ]
+    },
+    {
+        "id": "f7bdab218ee74250",
+        "type": "join",
+        "z": "9d17decb19bf6029",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 830,
+        "y": 420,
+        "wires": [
+            [
+                "afc3c6e8608dfd7c"
+            ]
+        ]
+    },
+    {
+        "id": "52b60408b1b19049",
+        "type": "inject",
+        "z": "79e5984cacd502c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 240,
+        "wires": [
+            [
+                "6409cd7a119aea4b",
+                "36c7eeae2e261837"
+            ]
+        ]
+    },
+    {
+        "id": "6409cd7a119aea4b",
+        "type": "function",
+        "z": "79e5984cacd502c3",
+        "name": "data1",
+        "func": "msg.payload = \"Hola\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 160,
+        "wires": [
+            [
+                "7d25da4daa777ec4"
+            ]
+        ]
+    },
+    {
+        "id": "36c7eeae2e261837",
+        "type": "function",
+        "z": "79e5984cacd502c3",
+        "name": "data2",
+        "func": "msg.payload = \"adios\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 300,
+        "wires": [
+            [
+                "7d25da4daa777ec4"
+            ]
+        ]
+    },
+    {
+        "id": "7d25da4daa777ec4",
+        "type": "function",
+        "z": "79e5984cacd502c3",
+        "name": "function 3",
+        "func": "var dato;\nvar cont = 0;\nwhile(cont !=2)\n{\n    if (msg.topic == \"data1\") {\n        var d1 = msg.payload;\n        cont++;\n    }\n    if (msg.topic == \"data2\") {\n        var d2 = msg.payload;\n        cont++;\n    }\n}\n\nmsg.payload = d1 + d2;\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 240,
+        "wires": [
+            [
+                "7984fff11e17cf1a"
+            ]
+        ]
+    },
+    {
+        "id": "7984fff11e17cf1a",
+        "type": "debug",
+        "z": "79e5984cacd502c3",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a48a81336433d487",
+        "type": "status",
+        "z": "79e5984cacd502c3",
+        "name": "",
+        "scope": [
+            "6409cd7a119aea4b"
+        ],
+        "x": 440,
+        "y": 460,
+        "wires": [
+            [
+                "3f0dbd3307ba5de3"
+            ]
+        ]
+    },
+    {
+        "id": "3b7cc18f730815d7",
+        "type": "complete",
+        "z": "79e5984cacd502c3",
+        "name": "sincroniza",
+        "scope": [
+            "6409cd7a119aea4b",
+            "36c7eeae2e261837"
+        ],
+        "uncaught": false,
+        "x": 540,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f0dbd3307ba5de3",
+        "type": "debug",
+        "z": "79e5984cacd502c3",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 380,
+        "wires": []
+    }
+]
